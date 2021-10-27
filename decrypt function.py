@@ -8,7 +8,7 @@ def passgenn():
     lowercase=uppercase.lower()
     digits="0123456789"
     symbols="! `£$%^&*()_-=+?<>,.;:@'~#{}[]|¬\/\"" #CREATING A TABLE OF ALL CHARACTERS
-    upper,lower,nums,syms= False,True,True,True #SELECTING WHICH CHARACTERS 
+    upper,lower,nums,syms= True,True,True,True #SELECTING WHICH CHARACTERS 
     select=""
     if upper:
         select+=uppercase
@@ -41,7 +41,7 @@ def passgenn():
         print("currenctly decrypting", hashes[i])
         start_time=time.time() #SETTING THE START TIIME
         while found!=False:
-            password = ''.join(random.choice(select) for i in range(4)) #CREATING A RANDOM WORD, LENGTH IS SET BY RANGE
+            password = ''.join(random.choice(select) for i in range(5)) #CREATING A RANDOM WORD, LENGTH IS SET BY RANGE
             password=str(password) # STORING THE WORD IN A STRING VARIABLE 
             string = hashlib.sha256(password.encode('utf-8'))
             password_hashed = (string.hexdigest()) #CREATING A HASH FOR THE GENERATED WORD
